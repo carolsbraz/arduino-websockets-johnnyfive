@@ -1,6 +1,6 @@
 window.onload = function() {
 
-    var socket = new WebSocket('ws://localhost:8000');
+    var socket = new WebSocket(`ws://localhost:${process.env.PORT || 8000}`);
 
     var el = document.getElementById('myColor');
 

@@ -6,7 +6,7 @@ app.listen(port, () => { console.log("Server on!") })
 
 var five = require('johnny-five')
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: 8000 })
+const wss = new WebSocket.Server({ port: process.env.PORT || 8000 })
 
 app.use(express.static('public'));
 
