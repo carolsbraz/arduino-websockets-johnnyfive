@@ -6,7 +6,7 @@ app.listen(port, () => { console.log("Server on!") })
 
 var five = require('johnny-five')
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: 8000 })
+const wss = new WebSocket.Server('https://socket-io-johnny-five-test.herokuapp.com/')
 
 app.use(express.static('public'));
 

@@ -1,6 +1,6 @@
 window.onload = function() {
 
-    var socket = new WebSocket(`ws://localhost:8000`);
+    var socket = new WebSocket(`https://socket-io-johnny-five-test.herokuapp.com/`);
 
     var el = document.getElementById('myColor');
 
