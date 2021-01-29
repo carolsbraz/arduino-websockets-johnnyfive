@@ -6,7 +6,7 @@ app.listen(port, () => { console.log("Server on!") })
 
 var five = require('johnny-five')
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({ port: process.env.PORT || 8000 })
+const wss = new WebSocket.Server({ port: 8000 })
 
 app.use(express.static('public'));
 
@@ -14,7 +14,7 @@ var board = new five.Board();
 
 board.on('ready', function() {
 
-    var led = new five.Led(8)
+    var led = new five.Led(7)
 
     wss.on('connection', function(ws, req) {
 
