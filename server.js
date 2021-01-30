@@ -10,6 +10,19 @@ const wss = new WebSocket.Server('https://socket-io-johnny-five-test.herokuapp.c
 
 app.use(express.static('public'));
 
-wss.on('connection', function(ws, req) {
-    console.log('connected')
+var board = new five.Board();
+
+board.on('ready', function() {
+
+    var led = new five.Led(7)
+
+    wss.on('connection', function(ws, req) {
+
+        console.log('connected')
+        ws.on('message', function(data) {
+            led.on();
+        })
+
+    })
+
 })
